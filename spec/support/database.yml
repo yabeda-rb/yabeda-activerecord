@@ -1,0 +1,14 @@
+test:
+  primary:
+    adapter: sqlite3
+    database: tmp/primary.db
+    pool: 5
+  primary_replica:
+    adapter: sqlite3
+    database: tmp/primary.db
+    pool: 5
+    replica: true
+  another:
+    adapter: sqlite3
+    database: tmp/another.db
+    pool: 5

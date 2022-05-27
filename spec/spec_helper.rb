@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
+require "bundler/setup"
 require "yabeda/activerecord"
+require "yabeda/rspec"
+
+require_relative "support/database"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -12,4 +16,7 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  Kernel.srand config.seed
+  config.order = :random
 end
