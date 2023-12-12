@@ -72,7 +72,7 @@ module Yabeda
       # Connection pool metrics collection
       collect do
         connection_pools = \
-          if Rails.version >= "7.1"
+          if ::ActiveRecord.version >= "7.1"
             ::ActiveRecord::Base.connection_handler.connection_pool_list(:all)
           else
             ::ActiveRecord::Base.connection_handler.connection_pool_list
