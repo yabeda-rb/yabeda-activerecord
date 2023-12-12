@@ -71,7 +71,12 @@ module Yabeda
 
       # Connection pool metrics collection
       collect do
-        connection_pools = ::ActiveRecord::Base.connection_handler.connection_pool_list
+        connection_pools = \
+          if ::ActiveRecord.version >= Gem::Version.new("7.1")
+            ::ActiveRecord::Base.connection_handler.connection_pool_list(:all)
+          else
+            ::ActiveRecord::Base.connection_handler.connection_pool_list
+          end
 
         connection_pools.each do |connection_pool|
           stats = connection_pool.stat
