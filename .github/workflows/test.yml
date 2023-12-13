@@ -14,7 +14,7 @@ jobs:
   test:
     # Skip running tests for local pull requests (use push event instead), run only for foreign ones
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.owner.login != github.event.pull_request.base.repo.owner.login
-    name: 'ActiveRecord ${{ matrix.activerecord }} × Yabeda ${{ matrix.yabeda }} × Ruby ${{ matrix.ruby }}'
+    name: 'Ruby ${{ matrix.ruby }} × AR ${{ matrix.activerecord }} × Yabeda ${{ matrix.yabeda }}'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -30,6 +30,9 @@ jobs:
             activerecord: '7.0'
             yabeda: '0.11'
           - ruby: '3.1'
+            activerecord: '7.1'
+            yabeda: '0.11'
+          - ruby: '3.2'
             activerecord: 'HEAD'
             yabeda: 'HEAD'
     container:
