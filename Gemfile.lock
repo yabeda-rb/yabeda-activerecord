@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    yabeda-activerecord (0.1.0)
+    yabeda-activerecord (0.1.1)
       activerecord (>= 6.0)
       yabeda (~> 0.6)
 
