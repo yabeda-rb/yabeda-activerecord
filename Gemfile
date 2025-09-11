@@ -36,3 +36,5 @@ gem "rspec", "~> 3.0"
 gem "rubocop", "~> 1.30"
 
 gem "debug"
+
+gem "anyway_config", ">= 1.3", "< 3.0"

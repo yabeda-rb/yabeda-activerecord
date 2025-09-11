@@ -22,6 +22,14 @@ Launch/restart your application and that's it: metrics are being collected.
 
 To expose metrics Don't forget to also add one of [Yabeda adapters](https://github.com/yabeda-rb/yabeda#available-monitoring-system-adapters) to your Gemfile. 
 
+## Configuration
+
+Configuration is handled by [anyway_config] gem. With it you can load settings from environment variables (upcased and prefixed with `YABEDA_ACTIVERECORD_`), YAML files, and other sources. See [anyway_config] docs for details.
+
+| Config key | Type  | Default | Description                                 |
+| -----------| ----- | ------- | ------------------------------------------- |
+| `buckets`  | array | []      | Set buckets to be used by histogram metrics |
+
 ## Metrics
 
 ### Query performance 
