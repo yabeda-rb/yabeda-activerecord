@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'anyway'
+require "anyway"
 
 module Yabeda
   module ActiveRecord

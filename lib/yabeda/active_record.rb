@@ -15,8 +15,7 @@ module Yabeda
       0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5, 10, # standard (from Prometheus)
       30, 60, 120, 300, 1800, 3600, 21_600, # Well, sometime queries can execute way too long
     ].freeze
-    
-    
+
     # rubocop: disable Layout/LineLength
     Yabeda.configure do
       config = ::Yabeda::ActiveRecord::Config.new

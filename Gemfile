@@ -27,7 +27,11 @@ else
   gem "activerecord", activerecord_version
 end
 
-gem "sqlite3"
+if activerecord_version.match(/\d+\.\d+/)&.then(&Gem::Version.method(:new))&.< Gem::Version.new("8.0")
+  gem "sqlite3", "~> 1.4"
+else
+  gem "sqlite3", "~> 2.0"
+end
 
 gem "rake", "~> 13.0"
 

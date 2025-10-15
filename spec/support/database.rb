@@ -17,7 +17,7 @@ database_config =
     ActiveRecord::Base.configurations
   end
 
-database_config.each do |_name, config|
+database_config.each_value do |config|
   next unless config["adapter"] == "sqlite3"
   next if config["database"] == ":memory:" || !File.exist?(config["database"])
 
