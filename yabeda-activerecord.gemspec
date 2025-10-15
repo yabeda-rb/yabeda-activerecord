@@ -33,4 +33,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "activerecord", ">= 6.0"
   spec.add_dependency "yabeda", "~> 0.6"
+  spec.add_dependency "anyway_config", ">= 1.3", "< 3.0"
 end
